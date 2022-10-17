@@ -3,7 +3,7 @@
 
 Voting.sol est un smart contract permettant à une petite organisation d'établir un vote.
 
-###**Le processus de vote :**###
+### Le processus de vote : ###
 
 1. L'administrateur du vote enregistre une liste blanche d'électeurs identifiés par leur adresse Ethereum.
 2. L'administrateur du vote commence la session d'enregistrement de la proposition.
@@ -15,7 +15,7 @@ Voting.sol est un smart contract permettant à une petite organisation d'établi
 8. L'administrateur du vote comptabilise les votes.
 9. Tout le monde peut vérifier les derniers détails de la proposition gagnante.
 
-###**Fonctionnalités supplémentaires :**###
+### Fonctionnalités supplémentaires : ###
 - Gestion de l'égalité : en cas d'égalité, un nouveau vote est lancé avec les propositions à égalité ;
 - Gestion des doublons de propositions : une même proposition ne peut être enregistrée qu'une seule fois grâce à la fonction `checkProposals(string memory _description)` ;
 - Reset de session : l'administrateur peut lancer un reset complet d'une session grâce à la fonction `resetSession()` (ajout des électeurs, enregistrement des propositions, vote et comptage des voies) ;
