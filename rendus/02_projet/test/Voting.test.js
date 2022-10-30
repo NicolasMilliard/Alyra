@@ -47,6 +47,13 @@ contract('Voting', accounts => {
         });
 
         describe('• Get one proposal', () => {
+            it('should revert (You\'re not a voter)', async() => {
+                await expectRevert(
+                    VotingInstance.getOneProposal(_voter1, { from: _owner }),
+                    'You\'re not a voter'
+                );
+            });
+
             it('should revert (there is no proposal during this context)', async() => {
                 await expectRevert.unspecified(VotingInstance.getOneProposal(BN(0), { from: _voter1 }));
             });
@@ -94,6 +101,13 @@ contract('Voting', accounts => {
     
                 expect(receipt.description, 'Proposition 1');
                 expect(receipt.voteCount, BN(0));
+            });
+
+            it('should revert (You\'re not a voter)', async() => {
+                await expectRevert(
+                    VotingInstance.getOneProposal(_voter1, { from: _owner }),
+                    'You\'re not a voter'
+                );
             });
 
             it('should revert (proposal 2 doesn\'t exist)', async() => {
@@ -148,6 +162,13 @@ contract('Voting', accounts => {
                 expect(receipt.description, 'Proposition 1');
                 // _voter1 has voted for this proposal
                 expect(receipt.voteCount, BN(1));
+            });
+
+            it('should revert (You\'re not a voter)', async() => {
+                await expectRevert(
+                    VotingInstance.getOneProposal(_voter1, { from: _owner }),
+                    'You\'re not a voter'
+                );
             });
 
             it('should revert (proposal 2 doesn\'t exist)', async() => {
