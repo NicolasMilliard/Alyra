@@ -34,6 +34,10 @@ A list of technologies used within the project:
 * [@truffle/hdwallet-provider](https://github.com/trufflesuite/truffle): Version ^2.1.0
 * [chai](https://www.chaijs.com/): Version ^4.3.6
 * [eth-gas-reporter](https://github.com/cgewecke/eth-gas-reporter): Version 0.2.25
+* [Hardhat](https://hardhat.org/): Version ^2.12.1
+* [hardhat-truffle5](https://hardhat.org/hardhat-runner/plugins/nomiclabs-hardhat-truffle5): Version ^2.0.7
+* [hardhat-web3](https://hardhat.org/hardhat-runner/plugins/nomiclabs-hardhat-web3): Version ^2.0.0
+* [solidity-coverage](https://github.com/sc-forks/solidity-coverage): Version ^0.8.2
 
 <a name="installation"></a>
 ### Installation
