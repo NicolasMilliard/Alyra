@@ -43,10 +43,14 @@ A list of technologies used within the project:
 git clone https://github.com/NicolasMilliard/Alyra.git
 cd Alyra/rendus/02_projet
 
+# Install dependencies
+npm install
+
 # Start the local blockchain in a terminal
 ganache
 
 # Launch the test in another terminal
+cd Alyra/rendus/02_projet
 truffle test
 ```
 
