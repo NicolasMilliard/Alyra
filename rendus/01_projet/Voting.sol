@@ -111,12 +111,15 @@ contract Voting is Ownable {
     /// @dev checkProposals is called to check if this proposals wasn't already be added to allProposals array.
     /// @dev allProposals array is incremented at each new proposal so allProposals.length - 1 is equal to the index of the right proposal.
     /// @param _description is necessary to check if the proposal has already been register.
-    function registerProposals(string memory _description) external checkVoter {
+    function registerProposals(string calldata _description) external checkVoter {
         require(votingStatus == WorkflowStatus.ProposalsRegistrationStarted, "You can't register proposals for now.");
 
-        checkProposals(_description);
+        Proposal memory proposal;
+        proposal.description = _description;
 
-        allProposals.push(Proposal(_description, 0));
+        checkProposals(proposal.description);
+
+        allProposals.push(proposal);
         
         emit ProposalRegistered(allProposals.length - 1);
     }
