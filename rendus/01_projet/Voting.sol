@@ -55,7 +55,7 @@ contract Voting is Ownable {
     /// @dev Only the owner of the contract can call this function.
     /// @dev Reset hasVoted and votedProposalId in the mapping, delete votersAddress array and call resetProposals function.
     /// @dev Reset votingStatus to register voters.
-    function resetSession() public onlyOwner {
+    function resetSession() external onlyOwner {
         require(votingStatus == WorkflowStatus.VotesTallied, "Session must be finished to be reseting.");
 
         resetProposals();
@@ -65,7 +65,7 @@ contract Voting is Ownable {
         updateWorkflow(WorkflowStatus.RegisteringVoters);
     }
 
-    /// @notice Reset only proposals. Function is public because admin can reset only proposals if needed.
+    /// @notice Reset only proposals. Function is external because admin can reset only proposals if needed.
     /// @dev Only the owner of the contract can call this function.
     /// @dev Winning proposal is reset and both allProposals and equalProposals arrays are delete (equalProposals represent proposals in case of an equality).
     /// @dev Reset votingStatus with startProposalsRegistration() to register proposals.
@@ -88,7 +88,7 @@ contract Voting is Ownable {
     /// @dev Only the owner of the contract can call this function.
     /// @dev Set isRegistered for the address to true and store this address in votersAddress array.
     /// @param _address is the address of the Voter who is added by the owner.
-    function authorized(address _address) public onlyOwner {
+    function authorized(address _address) external onlyOwner {
         require(votingStatus == WorkflowStatus.RegisteringVoters, "You can't add address to the whitelist for now.");
         require(!voters[_address].isRegistered, "Your address is already whitelisted.");
 
@@ -101,7 +101,7 @@ contract Voting is Ownable {
 
     /// @notice Administrator starts proposals registration session.
     /// @dev Only the owner of the contract can call this function.
-    function startProposalsRegistration() public onlyOwner {
+    function startProposalsRegistration() external onlyOwner {
         require(votingStatus == WorkflowStatus.RegisteringVoters, "You can't start registering proposals for now.");
         updateWorkflow(WorkflowStatus.ProposalsRegistrationStarted);
     }
@@ -111,7 +111,7 @@ contract Voting is Ownable {
     /// @dev checkProposals is called to check if this proposals wasn't already be added to allProposals array.
     /// @dev allProposals array is incremented at each new proposal so allProposals.length - 1 is equal to the index of the right proposal.
     /// @param _description is necessary to check if the proposal has already been register.
-    function registerProposals(string memory _description) public checkVoter {
+    function registerProposals(string memory _description) external checkVoter {
         require(votingStatus == WorkflowStatus.ProposalsRegistrationStarted, "You can't register proposals for now.");
 
         checkProposals(_description);
@@ -123,7 +123,7 @@ contract Voting is Ownable {
 
     /// @notice Administrator ends proposals registration session.
     /// @dev Only the owner of the contract can call this function.
-    function endProposalsRegistration() public onlyOwner {
+    function endProposalsRegistration() external onlyOwner {
         require(votingStatus == WorkflowStatus.ProposalsRegistrationStarted, "You can't end registering proposals for now.");
         updateWorkflow(WorkflowStatus.ProposalsRegistrationEnded);
     }
@@ -131,13 +131,13 @@ contract Voting is Ownable {
     /// @notice Display all proposals for all voters.
     /// @dev Only voters can call this function.
     /// @return Proposal[] which contains description and voteCount for each proposal.
-    function displayProposals() public checkVoter view returns(Proposal[] memory) {
+    function displayProposals() external checkVoter view returns(Proposal[] memory) {
         return allProposals;
     }
 
     /// @notice Administrator starts voting session.
     /// @dev Only the owner of the contract can call this function.
-    function startVotingSession() public onlyOwner {
+    function startVotingSession() external onlyOwner {
         require(votingStatus == WorkflowStatus.ProposalsRegistrationEnded, "You can't start voting session for now.");
         updateWorkflow(WorkflowStatus.VotingSessionStarted);
     }
@@ -146,7 +146,7 @@ contract Voting is Ownable {
     /// @dev Only voters can call this function. Voter's vote is registered (votedProposalId).
     /// @dev voteCount of the _proposalId is increments by one.
     /// @param _proposalId is the id of the proposal selected by the Voter.
-    function vote(uint _proposalId) public checkVoter {
+    function vote(uint _proposalId) external checkVoter {
         require(votingStatus == WorkflowStatus.VotingSessionStarted, "You can't vote for now.");
         require(!voters[msg.sender].hasVoted, "You have already vote once.");
 
@@ -160,14 +160,14 @@ contract Voting is Ownable {
 
     /// @notice Administrator ends voting session.
     /// @dev Only the owner of the contract can call this function.
-    function endVotingSession() public onlyOwner {
+    function endVotingSession() external onlyOwner {
         require(votingStatus == WorkflowStatus.VotingSessionStarted, "You can't vote for now.");
         updateWorkflow(WorkflowStatus.VotingSessionEnded);
     }
 
     /// @notice Administrator starts tally session.
     /// @dev Only the owner of the contract can call this function.
-    function startTallySession() public onlyOwner {
+    function startTallySession() external onlyOwner {
         require(votingStatus == WorkflowStatus.VotingSessionEnded, "You can't start tally session for now.");
         updateWorkflow(WorkflowStatus.VotesTallied);
     }
@@ -176,7 +176,7 @@ contract Voting is Ownable {
     /// @dev Only the owner of the contract can call this function.
     /// @dev Call getHighestVoteCount function. Compare all voteCount of each proposals and store proposals with an equal voteCount in a new array (equalProposals).
     /// @dev If there is no equality, winningProposalId is set.
-    function tallyVotes() public onlyOwner {
+    function tallyVotes() external onlyOwner {
         require(votingStatus == WorkflowStatus.VotesTallied, "You can't tally votes for now.");
         
         uint highestNumber = getHighestVoteCount();
@@ -217,7 +217,7 @@ contract Voting is Ownable {
     /// @dev Function revert if the target voter hasn't voted yet.
     /// @param _address is the address of a Voter to get his vote.
     /// @return votedProposalId
-    function getSpecificVote(address _address) public checkVoter view returns(uint) {
+    function getSpecificVote(address _address) external checkVoter view returns(uint) {
         require(voters[_address].hasVoted == true, "This voter doesn't have voted yet.");
 
         return voters[_address].votedProposalId;
@@ -225,7 +225,7 @@ contract Voting is Ownable {
 
     /// @notice Everyone can check the winner's proposal details.
     /// @return winning proposal's description.
-    function getWinner() public view returns(string memory) {
+    function getWinner() external view returns(string memory) {
         require(votingStatus == WorkflowStatus.VotesTallied, "You can't get the winner for now.");
         return allProposals[winningProposalId].description;
     }
