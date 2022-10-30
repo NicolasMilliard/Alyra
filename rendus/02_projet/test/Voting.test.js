@@ -170,10 +170,10 @@ contract('Voting', accounts => {
                 expectEvent(receipt, 'VoterRegistered', {voterAddress: _voter1});
             });
     
-            it('should revert (Ownable: caller is not the owner.)', async() => {
+            it('should revert (Ownable: caller is not the owner)', async() => {
                 await expectRevert(
                     VotingInstance.addVoter(_voter1, { from: _voter2 }),
-                    'Ownable: caller is not the owner.'
+                    'Ownable: caller is not the owner'
                 );
             });
     
@@ -324,10 +324,10 @@ contract('Voting', accounts => {
                 );
             });
     
-            it('should revert (Ownable: caller is not the owner.)', async() => {
+            it('should revert (Ownable: caller is not the owner)', async() => {
                 await expectRevert(
                     VotingInstance.startProposalsRegistering({ from: _voter1 }),
-                    'Ownable: caller is not the owner.'
+                    'Ownable: caller is not the owner'
                 );
             });
     
@@ -363,10 +363,10 @@ contract('Voting', accounts => {
                 );
             });
     
-            it('should revert (Ownable: caller is not the owner.)', async() => {
+            it('should revert (Ownable: caller is not the owner)', async() => {
                 await expectRevert(
                     VotingInstance.endProposalsRegistering( { from: _voter1 }),
-                    'Ownable: caller is not the owner.'
+                    'Ownable: caller is not the owner'
                 );
             });
     
@@ -408,10 +408,10 @@ contract('Voting', accounts => {
                 );
             });
     
-            it('should revert (Ownable: caller is not the owner.)', async() => {
+            it('should revert (Ownable: caller is not the owner)', async() => {
                 await expectRevert(
                     VotingInstance.startVotingSession({ from: _voter1 }),
-                    'Ownable: caller is not the owner.'
+                    'Ownable: caller is not the owner'
                 );
             });
     
@@ -457,10 +457,10 @@ contract('Voting', accounts => {
                 );
             });
     
-            it('should revert (Ownable: caller is not the owner.)', async() => {
+            it('should revert (Ownable: caller is not the owner)', async() => {
                 await expectRevert(
                     VotingInstance.endVotingSession({ from: _voter1 }),
-                    'Ownable: caller is not the owner.'
+                    'Ownable: caller is not the owner'
                 );
             });
     
@@ -515,10 +515,10 @@ contract('Voting', accounts => {
                 expect(winningProposalID).to.be.bignumber.equal(BN(1), "winningProposalId is not equal to proposal 1");
             });
     
-            it('should revert (Ownable: caller is not the owner.)', async() => {
+            it('should revert (Ownable: caller is not the owner)', async() => {
                 await expectRevert(
                     VotingInstance.tallyVotes( { from: _voter1 }),
-                    'Ownable: caller is not the owner.'
+                    'Ownable: caller is not the owner'
                 );
             });
     
