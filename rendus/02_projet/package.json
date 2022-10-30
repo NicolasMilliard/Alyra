@@ -5,5 +5,12 @@
     "@truffle/hdwallet-provider": "^2.1.0",
     "chai": "^4.3.6",
     "eth-gas-reporter": "^0.2.25"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-truffle5": "^2.0.7",
+    "@nomiclabs/hardhat-web3": "^2.0.0",
+    "hardhat": "^2.12.1",
+    "solidity-coverage": "^0.8.2",
+    "web3": "^1.8.0"
   }
 }
