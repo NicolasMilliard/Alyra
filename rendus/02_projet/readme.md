@@ -9,7 +9,7 @@
 ### General Info
 ***
 
-[Voting.test.js](#) regroup all the tests about the Smart Contract [Voting.sol](https://github.com/lecascyril/CodesRinkeby/blob/main/voting.sol).\
+[Voting.test.js](https://github.com/NicolasMilliard/Alyra/blob/main/rendus/02_projet/test/Voting.test.js) regroup all the tests about the Smart Contract [Voting.sol](https://github.com/lecascyril/CodesRinkeby/blob/main/voting.sol).\
 To respect the vision of the smart contract, **Voting.test.js** is divided in several contextes regarding the Smart Contract Voting.sol. This means this testing file contains 5 sections:
 1. Getters
 2. Registration
@@ -40,8 +40,8 @@ A list of technologies used within the project:
 ***
 ```sh
 # Clone the repository
-git clone https://github.com/
-cd ..
+git clone https://github.com/NicolasMilliard/Alyra/tree/main/rendus/02_projet
+cd Alyra/tree/main/rendus/02_projet
 
 # Start the local blockchain in a terminal
 ganache
