@@ -9,7 +9,7 @@
 ### General Info
 ***
 
-[Voting.test.js](https://github.com/NicolasMilliard/Alyra/blob/main/rendus/02_projet/test/Voting.test.js) regroup all the tests about the Smart Contract [Voting.sol](https://github.com/lecascyril/CodesRinkeby/blob/main/voting.sol).\
+[Voting.test.js](https://github.com/NicolasMilliard/Alyra/blob/main/rendus/02_projet/test/Voting.test.js) regroup all the tests about the Smart Contract [Voting.sol](https://github.com/NicolasMilliard/Alyra/blob/main/rendus/02_projet/contracts/Voting.sol).\
 To respect the vision of the smart contract, **Voting.test.js** is divided in several contextes regarding the Smart Contract Voting.sol. This means this testing file contains 5 sections:
 1. Getters
 2. Registration
