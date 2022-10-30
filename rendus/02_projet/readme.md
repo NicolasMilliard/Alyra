@@ -40,8 +40,8 @@ A list of technologies used within the project:
 ***
 ```sh
 # Clone the repository
-git clone https://github.com/NicolasMilliard/Alyra/tree/main/rendus/02_projet
-cd Alyra/tree/main/rendus/02_projet
+git clone https://github.com/NicolasMilliard/Alyra.git
+cd Alyra/rendus/02_projet
 
 # Start the local blockchain in a terminal
 ganache
