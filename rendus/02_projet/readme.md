@@ -81,7 +81,7 @@ npx hardhat coverage
 ```
 Contract: Voting
     
-✨ CONTEXT: Testing getters when WorflowStatus == RegisteringVoters
+✨ CONTEXT: Testing getters when WorkflowStatus == RegisteringVoters
 
       • Get voter
         √ should return Voter of the provided address (9ms)
@@ -92,7 +92,7 @@ Contract: Voting
         √ should revert (there is no proposal during this context) (17ms)
         √ should get winningProposalID (3ms)
     
-✨ CONTEXT: Testing getters when WorflowStatus == ProposalsRegistrationStarted
+✨ CONTEXT: Testing getters when WorkflowStatus == ProposalsRegistrationStarted
 
       • Get voter
         √ should return Voter of the provided address (22ms)
@@ -103,7 +103,7 @@ Contract: Voting
         √ should revert (proposal 2 doesn't exist) (18ms)
         √ should get winningProposalID (3ms)
     
-✨ CONTEXT: Testing getters when WorflowStatus == VotingSessionStarted
+✨ CONTEXT: Testing getters when WorkflowStatus == VotingSessionStarted
 
       • Get voter
         √ should return Voter of the provided address (4ms)

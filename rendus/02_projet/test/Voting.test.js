@@ -15,7 +15,7 @@ contract('Voting', accounts => {
 
     // ::::::::::::: GETTERS ::::::::::::: //
 
-    context('\n✨ CONTEXT: Testing getters when WorflowStatus == RegisteringVoters\n', () => {
+    context('\n✨ CONTEXT: Testing getters when WorkflowStatus == RegisteringVoters\n', () => {
         beforeEach(async() => {
             // Add _voter1 as a Voter
             await VotingInstance.addVoter(_voter1, { from: _owner });
@@ -65,7 +65,7 @@ contract('Voting', accounts => {
         });
     });
 
-    context('\n✨ CONTEXT: Testing getters when WorflowStatus == ProposalsRegistrationStarted\n', () => {
+    context('\n✨ CONTEXT: Testing getters when WorkflowStatus == ProposalsRegistrationStarted\n', () => {
         beforeEach(async() => {
             // Add _voter1 as a Voter
             await VotingInstance.addVoter(_voter1, { from: _owner });
@@ -121,7 +121,7 @@ contract('Voting', accounts => {
         });
     });
 
-    context('\n✨ CONTEXT: Testing getters when WorflowStatus == VotingSessionStarted\n', () => {
+    context('\n✨ CONTEXT: Testing getters when WorkflowStatus == VotingSessionStarted\n', () => {
         beforeEach(async() => {
             // Add _voter1 as a Voter
             await VotingInstance.addVoter(_voter1, { from: _owner });
