@@ -9,7 +9,7 @@
 ### General Info
 ***
 Let's Vote! is a dApp working on Ethereum Goerli Testnet based on the boilerplate **Truffle Unbox React**. In case you need Goerli ETH, you can use [this faucet](https://goerlifaucet.com/).\
-This dApp is using this [Smart Contract](#).
+This dApp is using this [Smart Contract](https://github.com/NicolasMilliard/Alyra/blob/main/rendus/03_projet/truffle/contracts/Voting.sol).
 
 <a name="technologies"></a>
 ### Technologies
