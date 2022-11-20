@@ -1,0 +1,74 @@
+Compiling your contracts...
+===========================
+> Compiling .\contracts\Voting.sol
+> Compiling .\node_modules\@openzeppelin\contracts\access\Ownable.sol
+> Compiling .\node_modules\@openzeppelin\contracts\utils\Context.sol
+> Artifacts written to C:\Users\Nico\Desktop\Alyra\Cours\Dev\voting\client\src\contracts
+> Compiled successfully using:
+   - solc: 0.8.17+commit.8df45f5f.Emscripten.clang
+
+
+Migrations dry-run (simulation) 
+=============================== 
+> Network name:    'goerli-fork'
+> Network id:      5
+> Block gas limit: 30000000 (0x1c9c380)
+
+
+1_deploy_simple_storage.js
+==========================
+
+   Deploying 'Voting'
+   ------------------
+   > block number:        7958600
+   > block timestamp:     1668527959
+   > account:             0x125BA2dC7567990A6b455E2F5dbF95d58b352db5
+   > balance:             0.200987174887360113
+   > gas used:            2107942 (0x202a26)
+   > gas price:           52.704152394 gwei
+   > value sent:          0 ETH
+   > total cost:          0.111097296405713148 ETH
+
+   -------------------------------------
+   > Total cost:     0.111097296405713148 ETH
+
+Summary
+=======
+> Total deployments:   1
+> Final cost:          0.111097296405713148 ETH
+
+
+
+
+Starting migrations...
+======================
+> Network name:    'goerli'
+> Network id:      5
+> Block gas limit: 30000000 (0x1c9c380)
+
+
+1_deploy_simple_storage.js
+==========================
+
+   Deploying 'Voting'
+   ------------------
+   > transaction hash:    0x01d55d9c5e374530cca4c4a1c6ffaff833c05b753ead444375571f783be15e35
+   > Blocks: 1            Seconds: 12
+   > contract address:    0xD8D7b3BAe97C715253C403D2EE0127Af692AB4E0
+   > block number:        7958606
+   > block timestamp:     1668527976
+   > account:             0x125BA2dC7567990A6b455E2F5dbF95d58b352db5
+   > balance:             0.194058141024015545
+   > gas used:            2107942 (0x202a26)
+   > gas price:           55.991260798 gwei
+   > value sent:          0 ETH
+   > total cost:          0.118026330269057716 ETH
+
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.118026330269057716 ETH
+
+Summary
+=======
+> Total deployments:   1
+> Final cost:          0.118026330269057716 ETH
