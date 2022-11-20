@@ -8,7 +8,7 @@ import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
  * @title Voting
  * @author Cyril Castagnet (modify by Nicolas Milliard)
  * @notice Voting system with simple majority. From Project #1 of Alyra
- * @dev ...
+ * @dev Add a limit of 100 proposals to addProposal() to remove the Dos Gas Limit security breach
 */
 
 contract Voting is Ownable {
