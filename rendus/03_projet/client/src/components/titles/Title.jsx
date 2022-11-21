@@ -5,7 +5,7 @@ import BtnConnectWallet from '../../components/buttons/BtnConnectWallet';
 const Title = () => {
   return (
     <div className='flex flex-center'>
-      <img src={img} alt="Let's vote!" />
+      <img src={img} alt="Let's vote!" className='img-responsive' />
       <div>
         <div id="title-container" className='mb-4'>
           <div className='title'>Vote for</div>
