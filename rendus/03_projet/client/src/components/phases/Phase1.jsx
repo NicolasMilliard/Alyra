@@ -15,6 +15,8 @@ const Phase1 = ({ isOwner }) => {
 
     // Handle value of input and check if it's an ethereum address
     const handleVoter = e => {
+        // Hide success message if admin add another voter
+        setShowSuccessMessage(false);
         if(/^0x[a-fA-F0-9]{40}$/.test(e.target.value)) {
             setNewVoter(e.target.value);
             setShowErrorMessage(false);
