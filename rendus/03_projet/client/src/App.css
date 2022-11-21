@@ -224,6 +224,11 @@ img {
   }
 }
 
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+
 /* Button */
 .btn {
   background-color: var(--first-color);
