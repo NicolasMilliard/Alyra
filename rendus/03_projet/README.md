@@ -9,7 +9,7 @@
 ### General Info
 ***
 Let's Vote! is a dApp working on Ethereum Goerli Testnet based on the boilerplate **Truffle Unbox React**. In case you need Goerli ETH, you can use [this faucet](https://goerlifaucet.com/).\
-This dApp is using this [Smart Contract](https://github.com/NicolasMilliard/Alyra/blob/main/rendus/03_projet/truffle/contracts/Voting.sol).
+This dApp is using [this Smart Contract](https://github.com/NicolasMilliard/Alyra/blob/main/rendus/03_projet/truffle/contracts/Voting.sol).
 
 <a name="technologies"></a>
 ### Technologies
@@ -47,6 +47,7 @@ cd truffle
 truffle migrate --reset
 
 # Deploy the Smart Contract on Goerli in a new terminal (option 2)
+cd truffle
 truffle migrate --reset --network goerli
 
 # Start the app in a new terminal
@@ -57,4 +58,4 @@ npm run start
 <a name="results"></a>
 ### Results
 ***
-An online demonstration is available [on Vercel](#). Also, a demonstration video was made and is accessible [by clicking this link](https://www.loom.com/share/88607f658ed345c6b76a7c3e8215b5ba).
+An online demonstration is available [on Vercel](https://letsvote-beta.vercel.app/). Also, a demonstration video was made and is accessible [by clicking this link](https://www.loom.com/share/88607f658ed345c6b76a7c3e8215b5ba).
