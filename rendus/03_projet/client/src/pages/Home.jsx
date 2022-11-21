@@ -56,7 +56,7 @@ const Home = () => {
         try {
             await contract.getPastEvents('VoterRegistered', {
                 fromBlock: 0,
-                toBlock: 1000
+                toBlock: 'latest'
             },
             (err, events) => {
                 for(let i = 0; i < events.length; i++) {
