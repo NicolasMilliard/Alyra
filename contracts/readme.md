@@ -1,2 +1,2 @@
 ## Alyra contracts
-Differents contracts created during my training in Alyra School.
+Differents contracts created during my training at Alyra School.
