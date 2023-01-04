@@ -11,6 +11,9 @@ build
 # Testing
 coverage
 
+# Design
+lets-vote.psd
+
 # Env
 .env
 .env.local
