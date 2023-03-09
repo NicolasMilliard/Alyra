@@ -58,4 +58,4 @@ npm run start
 <a name="results"></a>
 ### Results
 ***
-An online demonstration is available [on Vercel](https://letsvote-beta.vercel.app/). Also, a demonstration video was made and is accessible [by clicking this link](https://www.loom.com/share/88607f658ed345c6b76a7c3e8215b5ba).
+A demonstration video was made and is accessible [by clicking this link](https://www.loom.com/share/88607f658ed345c6b76a7c3e8215b5ba).
